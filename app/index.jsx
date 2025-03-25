@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   ActivityIndicator,
 } from "react-native";
-import PostItImage from "@/assets/images/post-it.png";
+import PostItImage from "@/assets/images/Liverpool_FC.svg";
 import { useRouter } from "expo-router";
 // import { useAuth } from "@/contexts/AuthContext";
 
@@ -34,7 +34,7 @@ const HomeScreen = () => {
       <Image source={PostItImage} style={styles.image} />
       <Text style={styles.title}>Welcome To Liverpool Squad List </Text>
       <Text style={styles.subtitle}>
-        Capture your thoughts anytime, anywhere
+        The best team in the world, You'll never walk alone
       </Text>
       <Text> </Text>
 
