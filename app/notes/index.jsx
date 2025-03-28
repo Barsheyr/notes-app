@@ -31,11 +31,11 @@ const NoteScreen = () => {
 
   useEffect(() => {
     fetchNotes();
-  }, []);
+  }, [user]);
 
   const fetchNotes = async () => {
     setLoading(true);
-    const response = await noteService.getNotes();
+    const response = await noteService.getNotes(user.$id);
 
     if (response.error) {
       setError(response.error);
@@ -52,7 +52,7 @@ const NoteScreen = () => {
   const addNote = async () => {
     if (newNote.trim() === "") return;
 
-    const response = await noteService.addNote(newNote);
+    const response = await noteService.addNote(user.$id, newNote);
 
     if (response.error) {
       Alert.alert("Error", response.error);

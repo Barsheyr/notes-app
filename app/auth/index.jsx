@@ -90,6 +90,10 @@ const AuthScreen = () => {
         </Text>
       </TouchableOpacity>
 
+      <TouchableOpacity>
+        <Text> {isRegistering ? "Good Bye" : "Welcome"} </Text>
+      </TouchableOpacity>
+
       <TouchableOpacity onPress={() => setIsRegistering(!isRegistering)}>
         <Text style={styles.switchText}>
           {isRegistering
