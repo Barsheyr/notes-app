@@ -32,17 +32,17 @@ const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <Image source={PostItImage} style={styles.image} />
-      <Text style={styles.title}>Welcome To Liverpool Squad List </Text>
+      <Text style={styles.title}> Welcome To Liverpool Squad List </Text>
       <Text style={styles.subtitle}>
         The best team in the world, You'll never walk alone
       </Text>
-      <Text> </Text>
+      <Text> Scourers </Text>
 
       <TouchableOpacity
         style={styles.button}
         onPress={() => router.push("/notes")}
       >
-        <Text style={styles.buttonText}>Get Started</Text>
+        <Text style={styles.buttonText}> Get Started</Text>
       </TouchableOpacity>
     </View>
   );

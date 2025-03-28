@@ -31,7 +31,7 @@ const NoteItem = ({ note, onDelete, onEdit }) => {
           returnKeyType="done"
         />
       ) : (
-        <Text style={styles.noteText}>{note.text}</Text>
+        <Text style={styles.noteText}> {note.text} </Text>
       )}
       <View style={styles.actions}>
         {isEditing ? (

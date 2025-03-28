@@ -8,14 +8,14 @@ import {
   ActivityIndicator,
 } from "react-native";
 import { useRouter } from "expo-router";
-// import { useAuth } from "@/contexts/AuthContext";
+import { useAuth } from "@/contexts/AuthContext";
 import NoteList from "@/components/NoteList";
 import AddNoteModal from "@/components/AddNoteModal";
 import noteService from "@/services/noteService";
 
 const NoteScreen = () => {
   const router = useRouter();
-  // const { user, loading: authLoading } = useAuth();
+  const { user, loading: authLoading } = useAuth();
 
   const [notes, setNotes] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
@@ -23,11 +23,11 @@ const NoteScreen = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // useEffect(() => {
-  //   if (!authLoading && !user) {
-  //     router.replace("/auth");
-  //   }
-  // }, [user, authLoading]);
+  useEffect(() => {
+    if (!authLoading && !user) {
+      router.replace("/auth");
+    }
+  }, [user, authLoading]);
 
   useEffect(() => {
     fetchNotes();
@@ -111,7 +111,7 @@ const NoteScreen = () => {
         <ActivityIndicator size="large" color="#007bff" />
       ) : (
         <>
-          {error && <Text style={styles.errorText}>{error}</Text>}
+          {error && <Text style={styles.errorText}> {error} </Text>}
 
           {notes.length === 0 ? (
             <Text style={styles.noNotesText}> You have no notes </Text>
